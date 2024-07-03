@@ -22,7 +22,7 @@ async def start(message: Message) -> None:
     """
     markup = types.inline_keyboard_markup.InlineKeyboardMarkup(
         inline_keyboard=[[
-            types.InlineKeyboardButton(text="launch", web_app=WebAppInfo(url=""))
+            types.InlineKeyboardButton(text="launch", web_app=WebAppInfo(url="https://raw.githubusercontent.com/DanyaMokhno/Tg_mini_app/main/web%20app/index.html?token=GHSAT0AAAAAACLN2YLRDMEKRKJB3MNJX7LYZUFIDVA"))
         ]],
         resize_keyboard=True
     )

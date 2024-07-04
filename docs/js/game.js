@@ -184,12 +184,3 @@ function startGame() {
 }
 
 startGame();
-
-// интерфейс
-// кнопка назад
-var BackButton = window.Telegram.WebApp.BackButton;
-BackButton.show();
-BackButton.onClick(function () {
-  WebApp.showAlert("Нет пути назад!");
-  BackButton.hide();
-});

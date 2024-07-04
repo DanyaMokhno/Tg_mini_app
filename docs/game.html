@@ -23,61 +23,22 @@
     <main class="container">
       <!-- <button onclick="goBack()">Назад</button> -->
       <div id="gameArea">
-        <div id="shark"></div>
+        <div id="shark">
+          <img
+            src="img/shark.svg"
+            alt=""
+            height="70"
+            width="70"
+            style="transform: translate(-10%, -10%)"
+          />
+        </div>
+        <span id="score">Счет: 0</span>
         <div id="timer">30</div>
       </div>
-      <span id="score">Счет: 0</span>
     </main>
     <script src="js/game.js"></script>
     <!-- <script src="js/scripts.js"></script> -->
     <!-- Bootstrap JavaScript Libraries        -->
-    <script>
-      // const jsConfetti = new JSConfetti();
-      initializeDraymanFramework({
-        browserCommands: (emit) => ({
-          getTelegramData: () => {
-            window.Telegram.WebApp.ready();
-            return {
-              initData: window.Telegram.WebApp.initData,
-              initDataUnsafe: window.Telegram.WebApp.initDataUnsafe,
-              themeParams: window.Telegram.WebApp.themeParams,
-              colorScheme: window.Telegram.WebApp.colorScheme,
-              viewportHeight: window.Telegram.WebApp.viewportHeight,
-            };
-          },
-          setMainButtonParams: (params) => {
-            window.Telegram.WebApp.MainButton.setParams(params);
-          },
-          setBackButtonVisibility: ({ visible }) => {
-            visible
-              ? window.Telegram.WebApp.BackButton.show()
-              : window.Telegram.WebApp.BackButton.hide();
-          },
-          // explode: async () => {
-          //   jsConfetti.addConfetti();
-          // },
-          events: async ({
-            onMainButtonClick,
-            onViewportChanged,
-            onBackButtonClick,
-          }) => {
-            Telegram.WebApp.onEvent("mainButtonClicked", () =>
-              emit(onMainButtonClick)
-            );
-            Telegram.WebApp.onEvent("backButtonClicked", () =>
-              emit(onBackButtonClick)
-            );
-            Telegram.WebApp.onEvent("viewportChanged", () =>
-              emit(
-                onViewportChanged,
-                { viewportHeight: window.Telegram.WebApp.viewportHeight },
-                { debounce: 300 }
-              )
-            );
-          },
-        }),
-      });
-    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

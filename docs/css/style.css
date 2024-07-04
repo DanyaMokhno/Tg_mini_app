@@ -19,6 +19,8 @@ body {
   display: flex;
   justify-content: center;
   height: 20em;
+  flex-direction: column;
+  align-items: center;
 }
 
 #username {
@@ -53,6 +55,8 @@ body {
 #gameArea {
   width: 100%;
   height: 40em;
+  background-image: url("../img/sea-background.webp");
+  background-size: cover;
   border: solid black 2px;
   border-radius: 12px;
   border: 1px solid black;
@@ -62,9 +66,11 @@ body {
 }
 #shark {
   width: 50px;
-  height: 30px;
-  /* background-image: url("shark.png"); */
-  background-color: gray;
+  height: 50px;
+  /* width: 50px;
+  height: 50px; */
+  /* background-image: url("../img/shark.svg"); */
+  /* background-color: gray; */
   position: absolute;
   bottom: 0;
   cursor: grab;
@@ -77,17 +83,27 @@ body {
   position: absolute;
 }
 .coin {
-  /* background-image: url("coin.png"); */
-  background-color: gold;
+  background-image: url("../img/coin.svg");
+  /* background-color: gold; */
 }
 .jellyfish {
-  /* background-image: url("jellyfish.png"); */
-  background-color: pink;
+  background-image: url("../img/jellyfish.svg");
+  background-size: cover;
+  /* background-color: pink; */
+}
+#score {
+  margin-top: 20px;
 }
 #timer {
   position: absolute;
   top: 10px;
   right: 10px;
+  /* font-size: 18px;
+  font-weight: bold; */
+}
+
+#timer,
+#score {
   font-size: 18px;
   font-weight: bold;
 }
@@ -107,4 +123,8 @@ body {
   border-radius: 30px;
   color: white;
   z-index: 2;
+}
+#Game_over span {
+  background-color: black;
+  color: white;
 }

@@ -86,8 +86,11 @@ body {
 }
 
 #shark,
+#shark img,
 .jellyfish,
-.coin {
+.coin,
+#score,
+#timer {
   background-color: transparent;
 }
 

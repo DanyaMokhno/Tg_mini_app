@@ -184,3 +184,13 @@ function startGame() {
 }
 
 startGame();
+
+// Back Button
+const backButton = tg.BackButton;
+// Показывать кнопку только если есть GET параметры
+// Показывать кнопку только если есть параметры
+// и страница не главная
+backButton.show();
+backButton.onClick(() => {
+  history.back();
+});

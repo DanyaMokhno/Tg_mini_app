@@ -64,6 +64,7 @@ body {
   overflow: hidden;
   touch-action: none; /* Отключение браузерного поведения по умолчанию для сенсорных событий */
 }
+
 #shark {
   width: 50px;
   height: 50px;
@@ -76,24 +77,35 @@ body {
   cursor: grab;
   user-select: none; /* Отключение выделения текста при перетаскивании */
 }
+
 .coin,
 .jellyfish {
   width: 30px;
   height: 30px;
   position: absolute;
 }
+
+#shark,
+.jellyfish,
+.coin {
+  background-color: transparent;
+}
+
 .coin {
   background-image: url("../img/coin.svg");
   /* background-color: gold; */
 }
+
 .jellyfish {
   background-image: url("../img/jellyfish.svg");
   background-size: cover;
   /* background-color: pink; */
 }
+
 #score {
   margin-top: 20px;
 }
+
 #timer {
   position: absolute;
   top: 10px;
@@ -124,6 +136,7 @@ body {
   color: white;
   z-index: 2;
 }
+
 #Game_over span {
   background-color: black;
   color: white;

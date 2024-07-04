@@ -154,7 +154,7 @@ function endGame() {
   gameRunning = false;
   resetGame();
   gameArea.parentElement.innerHTML =
-    `<div id='Game_over'>Game over <br>you earn ${score} money</div>` +
+    `<div id='Game_over'><span>Game over</span><br><span>you earn ${score} money</span></div>` +
     gameArea.parentElement.innerHTML;
 }
 

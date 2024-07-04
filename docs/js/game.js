@@ -1,3 +1,4 @@
+// игра
 const gameArea = document.getElementById("gameArea");
 const shark = document.getElementById("shark");
 const timerElement = document.getElementById("timer");
@@ -183,3 +184,12 @@ function startGame() {
 }
 
 startGame();
+
+// интерфейс
+// кнопка назад
+var BackButton = window.Telegram.WebApp.BackButton;
+BackButton.show();
+BackButton.onClick(function () {
+  WebApp.showAlert("Нет пути назад!");
+  BackButton.hide();
+});

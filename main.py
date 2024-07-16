@@ -92,7 +92,8 @@ async def webhook(request: Request) -> None:
     update = Update.model_validate(await request.json(), context={"bot": bot})
     await dp.feed_update(bot, update)
 
-# Запросы с главной старницы
+# Запросы с главной страницы
+
 
 @app.post("/Get_current_cash")
 async def load_cash(request: Request, data: dict) -> dict:
@@ -126,6 +127,8 @@ async def end_farm(request: Request, data: dict):
     return ans
 
 # Запросы со станицы с игрой
+
+
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, stream=sys.stdout)

@@ -52,8 +52,8 @@ bot = Bot(BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.MARKDOWN_
 dp = Dispatcher()
 dp.message.middleware(UserMiddleware())
 app = FastAPI(lifespan=lifespan)
-templates = Jinja2Templates(directory="./docs/templates")
-app.mount("/static", StaticFiles(directory="./docs/static"), name="static")
+templates = Jinja2Templates(directory="./app/templates")
+app.mount("/static", StaticFiles(directory="./app/static"), name="static")
 
 
 @dp.message(CommandStart())
@@ -129,6 +129,13 @@ async def end_farm(request: Request, data: dict):
 
 
 # Запросы со станицы с игрой
+
+
+@app.post("/save_score")
+async def save_score(request: Request, data: dict):
+    user = await User.filter(id=data["user_id"]).first()
+    user.balance+=data["score"]
+    await user.save()
 
 
 if __name__ == '__main__':

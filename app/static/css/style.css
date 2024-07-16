@@ -90,7 +90,7 @@ body {
 
 #gameArea {
   width: 100%;
-  height: 40em;
+  height: 100vh;
   background-image: url("../img/sea-background.webp");
   background-size: cover;
   border: solid black 2px;
@@ -104,14 +104,19 @@ body {
 #shark {
   width: 50px;
   height: 50px;
-  /* width: 50px;
-  height: 50px; */
   /* background-image: url("../img/shark.svg"); */
   /* background-color: gray; */
   position: absolute;
   bottom: 0;
   cursor: grab;
   user-select: none; /* Отключение выделения текста при перетаскивании */
+}
+
+#gameArea img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 }
 
 .coin,

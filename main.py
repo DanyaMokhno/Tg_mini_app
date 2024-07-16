@@ -92,6 +92,7 @@ async def webhook(request: Request) -> None:
     update = Update.model_validate(await request.json(), context={"bot": bot})
     await dp.feed_update(bot, update)
 
+
 # Запросы с главной страницы
 
 
@@ -126,8 +127,8 @@ async def end_farm(request: Request, data: dict):
         await user.save()
     return ans
 
-# Запросы со станицы с игрой
 
+# Запросы со станицы с игрой
 
 
 if __name__ == '__main__':

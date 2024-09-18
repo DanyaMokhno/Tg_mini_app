@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--tg-theme-bg-color);
+  color: var(--tg-theme-text-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  height: 100hv;
+}
+
+#userinfo {
+  display: flex;
+  justify-content: center;
+  height: 20em;
+  flex-direction: column;
+  align-items: center;
+}
+
+#username {
+  display: block;
+  font-size: 2em;
+}
+
+#game_button {
+  background-color: #cbd3f2;
+  /* margin-top: 50%; */
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  height: 50px;
+  border-radius: 16px;
+  border: solid black 1px;
+  box-shadow: 0px 10px 10px 2px;
+  font-size: 1.4em;
+  font-weight: 600;
+  color: #606062;
+}
+
+#game_button:hover {
+  box-shadow: 0px 5px 5px 0px;
+  background-color: #a7b7f6;
+  color: black;
+}
+
+#farm_button {
+  background-color: #a5c7ba;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  height: 50px;
+  border-radius: 16px;
+  border: solid black 1px;
+  box-shadow: 0px 10px 10px 2px;
+  font-size: 1.4em;
+  font-weight: 600;
+  color: #606062;
+}
+
+#farm_button:hover {
+  box-shadow: 0px 5px 5px 0px;
+  background-color: #84b2a0;
+  color: black;
+}
+
+#farm_button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+#farm_button.running {
+  pointer-events: none;
+}
+
+#farm_button.running:hover {
+  background-color: #a5c7ba; /* same as the default background color */
+  color: #606062; /* same as the default text color */
+}
+
+/* game */
+
+#gameArea {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/sea-background.webp");
+  background-size: cover;
+  border: solid black 2px;
+  border-radius: 12px;
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+  touch-action: none; /* Отключение браузерного поведения по умолчанию для сенсорных событий */
+}
+
+#shark {
+  width: 50px;
+  height: 50px;
+  /* background-image: url("../img/shark.svg"); */
+  /* background-color: gray; */
+  position: absolute;
+  bottom: 0;
+  cursor: grab;
+  user-select: none; /* Отключение выделения текста при перетаскивании */
+}
+
+#gameArea img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+.coin,
+.jellyfish {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+}
+
+#shark,
+#shark img,
+.jellyfish,
+.coin,
+#score,
+#timer {
+  background-color: transparent;
+  color: black;
+}
+
+.coin {
+  background-image: url("../img/coin.svg");
+  /* background-color: gold; */
+}
+
+.jellyfish {
+  background-image: url("../img/jellyfish.svg");
+  background-size: cover;
+  /* background-color: pink; */
+}
+
+#score {
+  margin-top: 20px;
+}
+
+#timer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /* font-size: 18px;
+  font-weight: bold; */
+}
+
+#timer,
+#score {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#Game_over {
+  margin: 2.3%;
+  margin-top: 20%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 70%;
+  width: 90%;
+  background-color: black;
+  border-radius: 30px;
+  color: white;
+  z-index: 2;
+}
+
+#Game_over span {
+  background-color: black;
+  color: white;
+}
